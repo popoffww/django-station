@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+ {% block title %}
+  Города - {{ block.super }}
+ {% endblock %}
+
+{% block content %}
+
+    <h1 class="display-4 mt-3">Города</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                {% for obj in objects_list %}
+                    <p>{{ obj.name }}</p>
+                {% endfor %}
+
+            </div>
+        </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
