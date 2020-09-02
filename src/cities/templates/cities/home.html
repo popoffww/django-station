@@ -11,14 +11,58 @@
         <div class="row">
             <div class="col-md-6">
 
-                {% for obj in objects_list %}
-                    <p>{{ obj.name }}</p>
+                <table class="table table-striped">
+                    <tbody>
+                         {% for object in objects_list %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'city:detail' pk=object.pk %}" class="text-dark">
+                                {{ object.name }}
+                            </a>
+                        </td>
+
+                        <td>
+                            <a href="{% url 'city:update' pk=object.pk %}" class="text-dark">
+                                <button class="btn btn-outline-success btn-sm">
+                                    Редактировать
+                                </button>
+                            </a>
+                        </td>
+
+                         <td>
+                            <a href="{% url 'city:delete' pk=object.pk %}" class="text-dark">
+                                <button class="btn btn-outline-danger btn-sm">
+                                    Удалить
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
                 {% endfor %}
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <a href="{% url 'city:add' %}">
+                    <button class="btn btn-outline-primary">
+                        Добавить новый город
+                    </button>
+                </a>
 
             </div>
         </div>
 
 {% endblock %}
+
+<!--<form action="" method="post">{% csrf_token %}-->
+<!--  {{ form.as_p }}-->
+<!--  <input type="submit" value="Сохранить" class="btn btn-outline-primary">-->
+<!--</form>-->
 
 
 
