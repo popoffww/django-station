@@ -19,8 +19,9 @@ from .views import home_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cities/', include(('cities.urls', 'city'))),
     path('', home_view, name='home'),
+    path('cities/', include(('cities.urls', 'city'))),
+
 ]
 
 

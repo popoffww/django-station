@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -8,14 +9,11 @@ from .models import City
 from .forms import CityForm
 
 def home(request):
-    if request.method == 'POST':
-        form = CityForm(request.POST or None)
-        if form.is_valid():
-            print(form.cleaned_data)
-    form = CityForm()
-    city = request.POST.get('name')
     cities = City.objects.all()
-    return render(request, 'cities/home.html', {'objects_list': cities, 'form': form})
+    paginator = Paginator(cities, 3)
+    page_number = request.GET.get('page')
+    cities = paginator.get_page(page_number)
+    return render(request, 'cities/home.html', {'objects_list': cities})
 
 class CityDetailView(DetailView):
     queryset = City.objects.all()
