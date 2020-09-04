@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
  {% block title %}
-  Поезды - {{ block.super }}
+  Направления - {{ block.super }}
  {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
     <div class="col-md-8 offset-2">
 
                     <!--Заголовок-->
-                    <h1 class="display-4 mt-3 text-center my-4">Поезды</h1>
+                    <h1 class="display-4 mt-3 text-center my-4">Направления</h1>
 
         <!--Таблица-->
         <table class="table table-striped">
@@ -18,8 +18,8 @@
             <thead>
             <tr>
                 <th>Номер поезда</th>
-                <th>Откуда</th>
-                <th>Куда</th>
+                <th>Станция отправки</th>
+                <th>Станция прибытия</th>
                 <th>Время пути</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
@@ -31,27 +31,20 @@
         <tr>
 
             <td>
-            <a href="" class="text-dark">
             {{ object.name }}
-            </a>
+
             </td>
 
             <td>
-            <a href="" class="text-dark">
             {{ object.from_city }}
-            </a>
             </td>
 
             <td>
-            <a href="" class="text-dark">
             {{ object.to_city }}
-            </a>
             </td>
 
             <td>
-            <a href="" class="text-dark">
             {{ object.travel_time }}
-            </a>
             </td>
 
             <td>
@@ -128,7 +121,7 @@
         </div>
 
         <!--Кнопка-->
-        <a href="">
+        <a href="{% url 'train:add' %}">
             <button class="btn btn-outline-primary">
             Добавить поезд
             </button>
