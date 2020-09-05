@@ -22,7 +22,6 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('cities/', include(('cities.urls', 'city'))),
     path('trains/', include(('trains.urls', 'train'))),
-
 ]
 
 
