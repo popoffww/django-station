@@ -48,7 +48,7 @@
             </td>
 
             <td>
-            <a href="" class="text-dark">
+            <a href="{% url 'train:update' pk=object.pk %}" class="text-dark">
             <button class="btn btn-outline-success">
             Редактировать
             </button>
@@ -56,7 +56,7 @@
             </td>
 
             <td>
-            <a href="" class="text-dark">
+            <a href="{% url 'train:delete' pk=object.pk %}" class="text-dark">
             <button class="btn btn-outline-danger">
             Удалить
             </button>
