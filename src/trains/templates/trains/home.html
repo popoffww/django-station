@@ -31,7 +31,9 @@
         <tr>
 
             <td>
-            {{ object.name }}
+            <a href="{% url 'train:detail' pk=object.pk %}" class="text-dark">
+                    {{ object.name }}
+                </a>
 
             </td>
 
