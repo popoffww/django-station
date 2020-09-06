@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+ {% block title %}
+  Поиск маршрута - {{ block.super }}
+ {% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+
+                    <h1 class="display-4 mt-3 text-center my-4">Поиск маршрута</h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Найти">
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
