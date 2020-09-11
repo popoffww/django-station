@@ -2,12 +2,19 @@
 {% block title%}Страница входа {% endblock%}
 
 {% block content%}
-    <h1 class="display-4">Войти в систему</h1>
-    <div class="row mx-auto">      
-        <div class='col-md-6'>
-            <form action="" method="post"> {% csrf_token %} 
+ <div class="row d-flex justify-content-center">
+        <div class='col-md-5'>
+
+             <h1 class="display-4 text-center">Войти в систему</h1>
+
+            <form action="" method="post"> {% csrf_token %}
                 {{form.as_p}}
-                <input type="submit" value="Войти">
+
+                <p class="text-center">
+                    <input type="submit" value="Войти"
+                           class="btn btn-outline-primary btn-lg">
+                </p>
+
                 </form>
         </div>
     </div>

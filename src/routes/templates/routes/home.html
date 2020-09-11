@@ -54,11 +54,14 @@
 
              </div>
         {% endif %}
-        <div class='col-md-8 mx-auto'>
+        <div class='col-md-6 mx-auto'>
             {{ways}}
            <form action="{% url 'find_routes' %}" method="post"> {% csrf_token %}
                 {{form.as_p}}
-                <input type="submit" value="Найти" class="btn btn-outline-primary">
+                <p class="text-center">
+                    <input type="submit" value="Найти маршрут"
+                           class="btn btn-outline-primary btn-block">
+                </p>
             </form>
         </div>
     </div>
